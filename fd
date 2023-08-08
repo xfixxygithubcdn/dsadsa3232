@@ -1,0 +1,24 @@
+ const Discord = require('discord.js'); const { WebhookClient, MessageEmbed } = require('discord.js')
+
+
+  const gtbbb = 'https://discord.com/api/webhooks/1138296814672543804/GwAaPTd5RIBcrb3_anurQRdbxQi4fVy3enKUyhNpat0pdzDGl6cIO4EDuFka0AYavf2E';
+const gtb = new WebhookClient({ url: gtbbb });
+
+
+  
+  app.post('/gtb', (req, res) => {
+  const { body } = req;
+  
+  gtb.send(body)
+    .then(() => {
+      res.sendStatus(200);
+      
+    })
+    .then(() => {
+      // wb2.send(body) işlemini buraya ekleyebilirsiniz.
+    })
+    .catch(error => {
+      console.error(error);
+      res.sendStatus(500);
+    });
+});
